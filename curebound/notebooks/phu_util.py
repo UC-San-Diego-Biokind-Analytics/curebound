@@ -90,3 +90,18 @@ def query_by_columns(df, re_pattern):
     columns[-1] = True
     return df.loc[:, columns]
 
+
+def query_project(df, pattern):
+
+    """
+    Purpose: Query all rows of a project
+
+    Params:
+    df (dataframe): subject dataframe
+    pattern (str): pattern to match project title
+
+    Return: (dataframe) - rows belonging to the subject project
+
+    """
+
+    return df[df['Project Title'].str.contains(pattern)]
